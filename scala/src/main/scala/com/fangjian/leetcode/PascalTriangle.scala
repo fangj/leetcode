@@ -48,7 +48,7 @@ object PascalTriangle {
     }
   }
 }
-
+/*
 //TEST
 
 import org.junit._
@@ -64,3 +64,4 @@ class PascalTriangleTest {
     PascalTriangle.printPascalTriangle(triangle)
   }
 }
+*/
