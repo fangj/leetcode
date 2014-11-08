@@ -26,18 +26,41 @@ package com.fangjian.leetcode
 object PascalTriangle {
   def grow(triangle: List[List[Int]]): List[List[Int]] = {
     val lastRow=triangle.last
-    val newLastRow=for(_<-lastRow){
-      //TODO
-    }
-    triangle
+    val lastRowLeft=0 :: lastRow
+    val lastRowRight=lastRow :+ 0
+    val pairs= lastRowLeft zip lastRowRight
+    val newRow=for((l,r)<-pairs) yield l+r
+    triangle :+ newRow
   }
 
   def generatePascalTriangle(row:Int): List[List[Int]] ={
     row match {
       case i if i<=0 =>Nil
       case 1 => List(List(1))
-      case 2 => List(List(1,1))
       case i => this.grow(generatePascalTriangle (i-1))
     }
+  }
+
+  def printPascalTriangle(triangle: List[List[Int]]): Unit ={
+    for(row<-triangle){
+      print(" "*(triangle.length-row.length))
+      println(row)
+    }
+  }
+}
+
+//TEST
+
+import org.junit._
+import Assert._
+
+@Test
+class PascalTriangleTest {
+
+  @Test
+  def test1() = {
+    val triangle=PascalTriangle.generatePascalTriangle(5)
+    //println(triangle)
+    PascalTriangle.printPascalTriangle(triangle)
   }
 }

@@ -41,9 +41,7 @@ import org.junit._
 import Assert._
 
 @Test
-class AppTest {
-  @Test
-  def testOK() = assertTrue(true)
+class ValidPalindromeTest {
   @Test
   def test1() = assertTrue("\"A man, a plan, a canal: Panama\" is a palindrome.",ValidPalindrome.isValidPalindrome("A man, a plan, a canal: Panama"))
   @Test
