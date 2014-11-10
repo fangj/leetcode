@@ -24,7 +24,7 @@ package com.fangjian.leetcode
 
 
 /**
- * Created by fangjian on 14-11-8.
+ * Created by Fang Jian on 14-11-8.
  */
 class TreeNode(var value:Int,var left:TreeNode,var right:TreeNode){
   override def toString: String = {
@@ -84,7 +84,7 @@ import org.junit._
 @Test
 class PathSumTest{
   @Test
-  def test1={
+  def test1()={
     val root=new TreeNode(5,
       new TreeNode(4 ,new TreeNode(11, new TreeNode(7),new TreeNode(2)),null),
       new TreeNode(8,new TreeNode(13),new TreeNode(4,null,new TreeNode(1))))
